@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livros Cristãos | Momentos Especiais em Família</title>
+    <title>Ei, Mamãe! O Kit Cristão que seu Filho Vai Amar</title>
     
     <!-- SEO & Meta Tags -->
-    <meta name="description" content="Transforme momentos especiais com sua família, célula e escola dominical. 35 livros de colorir cristãos únicos para fé e relaxamento. Download imediato em PDF.">
-    <meta name="keywords" content="livros colorir cristãos, atividades bíblicas, escola dominical, devocional familiar, atividades para células, educação cristã">
-    <meta name="author" content="Livros Cristãos">
+    <meta name="description" content="Ei, Mamãe! Transforme o tempo de tela do seu filho em momentos de diversão e aprendizado na Palavra de Deus. Conheça o Pack Cristão Infantil.">
+    <meta name="keywords" content="atividades cristas para criancas, kit cristao para maes, jogos biblicos infantis, livros para colorir cristaos, escola dominical em casa">
+    <meta name="author" content="Pack Cristão Infantil">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://meusite.com.br/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meusite.com.br/">
-    <meta property="og:title" content="Livros Cristãos | Atividades Bíblicas">
-    <meta property="og:description" content="Pacote completo com vários livros Cristãos para ensino bíblico e diversão em família.">
-    <meta property="og:image" content="https://i.ibb.co/JRXL35ZZ/Features-removebg-preview.png">
+    <meta property="og:title" content="Ei, Mamãe! O Kit Cristão que seu Filho Vai Amar">
+    <meta property="og:description" content="Diversão que edifica a fé do seu pequeno. Jogos, livros e atividades para mamães como você.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1589939705384-518913e2771e?q=80&w=2070&auto=format&fit=crop">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://meusite.com.br/">
-    <meta property="twitter:title" content="Livros Cristãos">
-    <meta property="twitter:description" content="Atividades cristãs para crianças. Baixe agora os livros em PDF.">
-    <meta property="twitter:image" content="https://i.ibb.co/JRXL35ZZ/Features-removebg-preview.png">
+    <meta property="twitter:title" content="Ei, Mamãe! O Kit Cristão que seu Filho Vai Amar">
+    <meta property="twitter:description" content="Jogos, livros e atividades cristãs para crianças. Acesso vitalício por um preço especial.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1589939705384-518913e2771e?q=80&w=2070&auto=format&fit=crop">
     
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- UTMify Script -->
     <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async defer></script>
@@ -47,29 +50,28 @@
     
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #0be881 0%, #00d2d3 100%);
-            --accent-color: #ffd32c;
-            --danger-color: #ff4757;
-            --text-dark: #333;
-            --text-gray: #666;
-            --bg-light: #f9f9f9;
+            --primary-color: #007BFF; /* Vibrant Blue */
+            --secondary-color: #FFC107; /* Sunny Yellow */
+            --accent-color: #17A2B8; /* Aqua Cyan */
+            --danger-color: #dc3545;
+            --text-dark: #343A40;
+            --text-light: #6C757D;
+            --bg-light: #F8F9FA;
             --white: #ffffff;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
-            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Reset & Base */
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
             background-color: var(--bg-light);
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
         
         img { max-width: 100%; display: block; }
@@ -78,564 +80,363 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            width: 100%;
         }
         
-        /* Botão CTA */
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary-gradient);
-            color: var(--white);
-            padding: 15px 30px;
-            border-radius: 50px;
+        /* Typography */
+        h1 { font-family: 'Baloo 2', cursive; font-size: 3.5rem; font-weight: 800; line-height: 1.1; color: var(--white); }
+        h2 { font-family: 'Baloo 2', cursive; font-size: 2.5rem; font-weight: 700; color: var(--text-dark); }
+        h3 { font-family: 'Baloo 2', cursive; font-size: 1.8rem; font-weight: 600; color: var(--text-dark); }
+
+        /* Urgency Timer */
+        .urgency-timer {
+            background: linear-gradient(90deg, var(--secondary-color), #ff9800);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 15px;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .urgency-timer i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary-color), #ff9800);
+            color: var(--text-dark);
+            padding: 20px 45px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
             text-decoration: none;
+            text-align: center;
             border: none;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 193, 7, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+        }
+        .cta-button:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(255, 193, 7, 0.5); }
+        
+        /* WhatsApp Button - CORRIGIDO DEFINITIVAMENTE */
+        .whatsapp-button {
+            position: fixed; /* ESSENCIAL para o botão ficar fixo na tela */
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1001;
+            transition: var(--transition);
+            text-decoration: none; /* Remove o sublinhado do link */
+        }
+        .whatsapp-button:hover { transform: scale(1.1); }
+
+        /* Centralização perfeita do ícone */
+        .whatsapp-button i {
+            position: absolute; /* Posiciona o ícone em relação ao botão */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Move o ícone de volta para o centro */
+            font-size: 30px;
         }
         
-        .cta-button:hover, .cta-button:focus {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-            outline: none;
-        }
-        
-        /* Notificação de Compra */
+        /* Purchase Notification */
         .purchase-notification {
             position: fixed;
-            bottom: 20px;
+            bottom: 100px;
             right: 20px;
             background: var(--white);
             border-radius: 12px;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
             padding: 16px;
             width: 320px;
-            z-index: 9999;
-            transform: translateY(150%);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-left: 4px solid #667eea;
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.4s ease-out;
+            border-left: 4px solid var(--primary-color);
         }
-        
-        .purchase-notification.show { transform: translateY(0); }
-        
-        .close-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            line-height: 1;
-            cursor: pointer;
-            color: #999;
-            padding: 5px;
-        }
-        
-        .customer-name { font-weight: 700; margin-bottom: 4px; color: #333; }
-        .purchase-info { font-size: 14px; margin-bottom: 8px; color: #555; }
-        .location-time { display: flex; justify-content: space-between; font-size: 12px; color: #888; }
+        .purchase-notification.show { transform: translateX(0); }
+        .close-btn { position: absolute; top: 8px; right: 8px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; }
+        .customer-name { font-weight: 700; margin-bottom: 4px; color: var(--text-dark); }
+        .purchase-info { font-size: 14px; margin-bottom: 8px; color: var(--text-light); }
+        .location-time { display: flex; justify-content: space-between; font-size: 12px; color: #aaa; }
         
         /* Header/Hero Section */
         .hero {
-            background: var(--primary-gradient);
+            background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.9)), url('https://images.pexels.com/photos/1106425/pexels-photo-1106425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            background-attachment: fixed;
             color: var(--white);
-            padding: 60px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .security-badge {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            padding: 8px 20px;
-            display: inline-flex;
-            align-items: center;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        
-        .security-badge i { margin-right: 10px; }
-        
-        .hero-content { display: flex; align-items: center; gap: 60px; }
-        
-        .product-image { flex: 1; position: relative; display: flex; justify-content: center; }
-        
-        .crayons {
-            position: absolute;
-            top: -30px;
-            left: 20px;
-            display: flex;
-            z-index: 1;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-        }
-        
-        .crayon { width: 12px; height: 50px; margin-right: 6px; border-radius: 6px; }
-        .crayon.red { background-color: #ff4757; }
-        .crayon.orange { background-color: #ff9f43; }
-        .crayon.yellow { background-color: #ffd32c; }
-        .crayon.green { background-color: #0be881; }
-        .crayon.blue { background-color: #00d2d3; }
-        .crayon.purple { background-color: #a55eea; }
-        
-        .hero-book-image {
-            width: 100%;
-            max-width: 450px;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-            position: relative;
-            z-index: 2;
-            transform: rotate(-2deg);
-            transition: transform 0.3s ease;
-        }
-
-        .hero-book-image:hover { transform: rotate(0deg) scale(1.02); }
-        
-        .hero-text { flex: 1; }
-        
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        .highlight { color: var(--accent-color); position: relative; }
-        
-        .subtitle { font-size: 1.25rem; margin-bottom: 35px; opacity: 0.95; font-weight: 300; }
-        
-        .features { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 45px; }
-        
-        .feature {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50px;
-            padding: 10px 20px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            backdrop-filter: blur(5px);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        
-        .feature i { margin-right: 10px; color: var(--accent-color); }
-        
-        /* Why Choose Section */
-        .why-choose { padding: 80px 0; background: var(--white); }
-        
-        .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-            font-weight: 700;
+            position: relative;
         }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-content h1 { margin-bottom: 20px; }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .highlight { color: var(--secondary-color); }
+
+        /* Offer Section */
+        .offer-section {
+            padding: 100px 0 80px;
+            background: var(--white);
+        }
+        .offer-card {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 25px;
+            box-shadow: var(--shadow-md);
+            padding: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 3px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+        .offer-card:hover { transform: translateY(-5px); }
+        .offer-card h2 { margin-bottom: 15px; }
+        .offer-card p { color: var(--text-light); font-size: 1.1rem; margin-bottom: 30px; }
         
-        .benefits-grid {
+        .price-block {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        .price-block .old-price { font-size: 1.2rem; text-decoration: line-through; opacity: 0.8; }
+        .price-block .new-price { font-size: 3.5rem; font-weight: 800; margin: 10px 0; }
+        .price-block .installments { font-size: 1.2rem; opacity: 0.9; font-weight: 600;}
+        .price-block .discount { font-size: 1rem; background: var(--secondary-color); color: var(--text-dark); padding: 5px 10px; border-radius: 20px; display: inline-block; margin-top: 10px; font-weight: 700;}
+
+        /* Stock Counter */
+        .stock-counter {
+            background-color: var(--danger-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+        .stock-counter i { margin-right: 8px; }
+
+        /* Social Proof Banner */
+        .social-proof-banner {
+            background-color: #e7f5ff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .social-proof-banner h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .social-proof-banner p { font-size: 1.1rem; color: var(--text-dark); }
+        .social-proof-banner .stars { color: var(--secondary-color); font-size: 1.5rem; margin-top: 10px; }
+
+        /* What You Will Receive Section */
+        .receive-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        .receive-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin-top: 50px;
         }
-        
-        .benefit {
-            text-align: center;
-            padding: 30px 20px;
+        .receive-item {
+            background: var(--white);
+            padding: 25px;
             border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
             transition: var(--transition);
-            background: #fff;
-            border: 1px solid #eee;
+            border: 2px solid transparent;
         }
+        .receive-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+        .receive-item i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-right: 20px;
+            min-width: 50px;
+            text-align: center;
+        }
+        .receive-item-content h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .receive-item-content p { margin: 0; color: var(--text-light); font-size: 0.95rem; }
         
-        .benefit:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); border-color: transparent; }
-        
-        .benefit-icon {
+        /* Highlighted Bonus Item */
+        .receive-item.bonus-item {
+            background: linear-gradient(145deg, #fff9e6, #fff3cd);
+            border-color: var(--secondary-color);
+        }
+        .receive-item.bonus-item i { color: var(--secondary-color); }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .testimonial-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .testimonial-card img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
-            color: var(--white);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .benefit-icon.blue { background: var(--primary-gradient); }
-        .benefit-icon.purple { background: linear-gradient(135deg, #764ba2 0%, #a55eea 100%); }
-        .benefit-icon.green { background: var(--secondary-gradient); }
-        .benefit-icon.orange { background: linear-gradient(135deg, #ff9f43 0%, #ff4757 100%); }
-        
-        .benefit h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-dark); }
-        .benefit p { color: var(--text-gray); font-size: 0.95rem; }
-        
-        /* Products Gallery */
-        .products-gallery { padding: 80px 0; background: #f0f4f8; }
-        .section-subtitle { text-align: center; font-size: 1.1rem; color: var(--text-gray); margin-bottom: 50px; margin-top: -10px; }
-        
-        /* Carousel Generic Styles */
-        .carousel-wrapper { position: relative; margin-bottom: 50px; overflow: hidden; padding: 10px 0; }
-        
-        .carousel-track-container { overflow: hidden; width: 100%; }
-        
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            width: 100%;
-            cursor: grab;
-        }
-        
-        .carousel-track:active { cursor: grabbing; }
-        
-        /* Product Carousel Specifics */
-        .product-slide {
-            flex: 0 0 calc(100% / 3);
-            padding: 0 15px;
-            min-width: 0;
-            user-select: none;
-        }
-        
-        .product-slide img {
-            width: 100%;
-            height: 300px;
+            margin: 0 auto 20px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-            background: #e0e0e0; /* Placeholder color */
+            border: 3px solid var(--primary-color);
         }
-        
-        .product-slide:hover img { transform: scale(1.03); box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12); }
-        
-        .carousel-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            z-index: 10;
-            transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            color: #667eea;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .carousel-nav-btn:hover { background: var(--white); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); color: #764ba2; }
-        .carousel-prev { left: 20px; }
-        .carousel-next { right: 20px; }
-        
-        /* Testimonials */
-        .testimonials { padding: 80px 0; background: var(--white); }
-        
-        .rating { display: flex; align-items: center; justify-content: center; margin-bottom: 40px; background: #fff9e6; padding: 10px 20px; border-radius: 50px; width: fit-content; margin-left: auto; margin-right: auto; }
-        .stars { color: var(--accent-color); margin-right: 10px; }
-        .rating span { font-weight: 600; color: #333; }
-        
-        .testimonial-slide {
-            flex: 0 0 100%;
-            padding: 0 20px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .chat-screenshot {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            border: 4px solid #eee;
-        }
-        
-        .dots-container { display: flex; justify-content: center; gap: 8px; margin-top: 25px; }
-        
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
-        
-        .dot.active { background: #667eea; transform: scale(1.3); }
-        
-        /* Limited Offer */
-        .limited-offer { padding: 80px 0; background: linear-gradient(to bottom, #f9f9f9, #fff); }
-        
-        .offer-alert {
-            background: var(--danger-color);
-            color: var(--white);
-            text-align: center;
-            padding: 12px 25px;
-            border-radius: 50px;
-            margin: 0 auto 40px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .offer-alert i { margin-right: 10px; }
-        
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-            align-items: center;
-        }
-        
-        .pricing-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: var(--shadow-md);
-            position: relative;
-            transition: var(--transition);
-            border: 1px solid #f0f0f0;
-        }
-        
-        .pricing-card:hover { transform: translateY(-5px); border-color: #667eea; }
-        
-        .pricing-card.premium {
-            transform: scale(1.05);
-            border: 2px solid #667eea;
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-            z-index: 2;
-        }
-        
-        .pricing-card.premium:hover { transform: scale(1.05) translateY(-5px); }
-        
-        .bestseller {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-gradient);
-            color: var(--white);
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
-            white-space: nowrap;
-        }
-        
-        .bestseller i { margin-right: 5px; }
-        
-        .package-header { text-align: center; margin-bottom: 25px; }
-        .package-header i { font-size: 2.5rem; color: #667eea; margin-bottom: 15px; display: block; }
-        .package-header h3 { font-size: 1.8rem; color: var(--text-dark); font-weight: 800; }
-        
-        .pricing { text-align: center; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #f0f0f0; }
-        
-        .old-price { text-decoration: line-through; color: #999; font-size: 1.1rem; margin-bottom: 5px; }
-        
-        .discount {
-            background: #ffecf0;
-            color: var(--danger-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        
-        .current-price { font-size: 3rem; font-weight: 800; color: var(--text-dark); line-height: 1; margin-bottom: 8px; }
-        .savings { color: #0be881; font-weight: 600; font-size: 0.95rem; }
-        
-        .features-list { margin-bottom: 30px; }
-        .feature-item { display: flex; align-items: center; margin-bottom: 12px; font-size: 0.95rem; color: #555; }
-        .feature-item i { color: #0be881; margin-right: 12px; flex-shrink: 0; }
-        
-        .included { text-align: center; font-weight: 700; margin-bottom: 20px; color: #667eea; font-size: 0.9rem; letter-spacing: 0.5px; }
-        
-        .bonus-items { margin-bottom: 30px; }
-        
-        .bonus-item {
-            display: flex;
-            align-items: flex-start;
-            background: #f8faff;
-            padding: 12px 15px;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            border: 1px solid #eef2ff;
-        }
-        
-        .bonus-item i { color: #667eea; font-size: 1.2rem; margin-right: 12px; margin-top: 3px; }
-        .bonus-item strong { display: block; font-size: 0.9rem; color: #333; line-height: 1.3; }
-        .bonus-item p { color: #667eea; font-size: 0.75rem; font-weight: 700; margin-top: 2px; text-transform: uppercase; }
-        
-        .buy-button {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 15px;
-            transition: var(--transition);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-        }
-        
-        .buy-button.basic { background: var(--primary-gradient); color: var(--white); box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3); }
-        .buy-button.premium { background: var(--secondary-gradient); color: var(--white); box-shadow: 0 10px 20px rgba(11, 232, 129, 0.3); }
-        .buy-button:hover { transform: translateY(-3px); filter: brightness(1.05); }
-        
-        .social-proof { text-align: center; color: #888; font-size: 0.85rem; margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 5px; }
-        .social-proof::before { content: ''; display: inline-block; width: 6px; height: 6px; background: #0be881; border-radius: 50%; }
-        
-        /* FAQ */
-        .faq { padding: 80px 0; background: var(--white); }
-        
-        .faq-list { max-width: 800px; margin: 0 auto 40px; }
-        
+        .testimonial-card p { font-style: italic; color: var(--text-light); margin-bottom: 20px; }
+        .testimonial-card h4 { font-weight: 600; color: var(--text-dark); }
+        .stars { color: var(--secondary-color); margin-bottom: 10px; }
+
+        /* FAQ Section */
+        .faq { padding: 80px 0; background: var(--bg-light); }
+        .faq-list { max-width: 800px; margin: 50px auto 0; }
         .faq-item {
             margin-bottom: 15px;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            border: 1px solid #eee;
+            border: 1px solid #e0e0e0;
+            background: var(--white);
         }
-        
         .faq-question {
-            background: #fcfcfc;
-            padding: 20px 25px;
+            background: var(--white);
+            padding: 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: #333;
-            transition: background 0.2s;
-            user-select: none;
+            color: var(--text-dark);
+            transition: var(--transition);
         }
-        
-        .faq-question:hover { background: #f5f5f5; }
-        .faq-question i { transition: transform 0.3s ease; color: #667eea; }
+        .faq-question:hover { background: var(--bg-light); }
+        .faq-question i { transition: transform 0.3s ease; color: var(--primary-color); }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
-        .faq-item.active .faq-question { background: #f8faff; color: #667eea; }
-        
         .faq-answer {
-            background: var(--white);
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.35s ease-out;
-            border-top: 1px solid transparent;
+            transition: max-height 0.4s ease-out;
         }
+        .faq-answer p { padding: 0 25px 25px; color: var(--text-light); }
         
-        .faq-item.active .faq-answer { border-top-color: #eee; }
-        .faq-answer p { padding: 25px; color: #555; font-size: 0.95rem; line-height: 1.7; }
-        
-        /* Guarantee */
-        .guarantee { padding: 60px 0; background: #f9f9f9; }
-        
+        /* Guarantee Section */
+        .guarantee { padding: 80px 0; background: var(--white); text-align: center; }
         .guarantee-box {
-            background: var(--white);
+            background: var(--bg-light);
             border-radius: 20px;
-            padding: 40px;
-            text-align: center;
+            padding: 50px;
             box-shadow: var(--shadow-md);
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        
-        .guarantee-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: var(--secondary-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            color: var(--white);
-        }
-        
-        .security-badges { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-        .security-item { display: flex; align-items: center; color: #666; font-size: 0.9rem; font-weight: 500; }
-        .security-item i { margin-right: 10px; color: #0be881; font-size: 1.2rem; }
+        .guarantee-icon { font-size: 4rem; color: var(--accent-color); margin-bottom: 20px; }
         
         /* Footer */
-        .footer { background: #2d3436; color: #b2bec3; padding: 40px 0; text-align: center; font-size: 0.9rem; }
-        .footer p { margin-bottom: 10px; }
-        
-        /* Image Placeholder for Error Handling */
-        .img-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e2e8f0;
-            color: #a0aec0;
-            font-size: 2rem;
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            border-radius: 12px;
+        .footer { background: var(--text-dark); color: #b2bec3; padding: 40px 0; text-align: center; font-size: 0.9rem; }
+
+        /* Decorative Illustrations */
+        .deco-child-1 {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            width: 80px;
+            opacity: 0.5;
+            animation: float 6s ease-in-out infinite;
+        }
+        .deco-child-2 {
+            position: absolute;
+            bottom: 20%;
+            right: 5%;
+            width: 100px;
+            opacity: 0.5;
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         /* Responsividade */
         @media (max-width: 992px) {
-            .hero-content { flex-direction: column; text-align: center; gap: 40px; }
-            .hero-text h1 { font-size: 2.8rem; }
-            .crayons { display: none; }
-            .pricing-card.premium { transform: scale(1); }
-            .pricing-card.premium:hover { transform: translateY(-5px); }
-            .hero { padding-top: 40px; }
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+            .deco-child-1, .deco-child-2 { display: none; } /* Hide on smaller screens */
         }
-        
+
         @media (max-width: 768px) {
-            .hero-text h1 { font-size: 2.2rem; }
-            .subtitle { font-size: 1.1rem; }
-            .product-slide { flex: 0 0 100%; }
-            .features { justify-content: center; }
-            .buy-button { font-size: 1rem; padding: 15px; }
-            .section-title { font-size: 2rem; }
-            .purchase-notification { width: 90%; left: 5%; right: 5%; bottom: 10px; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .hero { padding: 100px 0; background-attachment: scroll; }
+            .offer-card { padding: 30px 20px; }
+            .price-block .new-price { font-size: 2.8rem; }
+            .purchase-notification { width: 90%; right: 5%; left: 5%; }
         }
-        
+
         @media (max-width: 480px) {
-            .hero-text h1 { font-size: 1.8rem; }
-            .feature { font-size: 0.85rem; padding: 8px 15px; }
+            h1 { font-size: 2rem; }
             .container { padding: 0 15px; }
-            .pricing-card { padding: 30px 20px; }
-            .current-price { font-size: 2.5rem; }
+            .cta-button { padding: 15px 30px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Urgency Timer -->
+    <div class="urgency-timer" id="urgency-timer">
+        <i class="fas fa-clock"></i>
+        <span>OFERTA POR TEMPO LIMITADO! Termina em: <span id="timer">00:00:00</span></span>
+    </div>
+
     <!-- Purchase Notification -->
     <div id="purchaseNotification" class="purchase-notification" role="alert" aria-live="polite">
         <button class="close-btn" aria-label="Fechar notificação">×</button>
@@ -647,270 +448,189 @@
         </div>
     </div>
 
-    <!-- Header/Hero Section -->
+    <!-- Hero Section -->
     <header class="hero">
-        <div class="container">
-            <div style="text-align: center;">
-                <div class="security-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Compra 100% segura e protegida</span>
-                </div>
-            </div>
-
-            <div class="hero-content">
-                <div class="product-image">
-                    <img src="https://i.ibb.co/JRXL35ZZ/Features-removebg-preview.png" alt="Capa dos Livros Cristãos com lápis de cor" class="hero-book-image" width="450" height="450" fetchpriority="high">
-                </div>
-
-                <div class="hero-text">
-                    <h1>Livros<span class="highlight">Cristãos</span></h1>
-                    <p class="subtitle">Transforme momentos especiais com sua família, célula e escola dominical através da arte e da fé.</p>
-                    
-                    <div class="features">
-                        <div class="feature"><i class="fas fa-users"></i> Células</div>
-                        <div class="feature"><i class="fas fa-church"></i> Escola Dominical</div>
-                        <div class="feature"><i class="fas fa-heart"></i> Devocional</div>
-                        <div class="feature"><i class="fas fa-graduation-cap"></i> Pedagogia</div>
-                    </div>
-                    
-                    <button class="cta-button hero-cta" onclick="smoothScroll('limited-offer')">QUERO VER AS OFERTAS <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></button>
-                </div>
-            </div>
+        <div class="container hero-content">
+            <h1 data-aos="fade-up" data-aos-duration="1000">Ei, Mamãe!</h1>
+            <p data-aos="fade-up" data-aos-duration="1200">Quer transformar a <strong>telinha</strong> em um momento com <strong>Deus</strong>? Apresento o Pack Cristão Infantil: jogos, livros e atividades divertidas que ensinam a Palavra para seus pequenos.</p>
+            <!-- BOTÃO COM O ONCLICK PARA O SMOOTH SCROLL -->
+            <a class="cta-button" data-aos="zoom-in" data-aos-duration="1400" onclick="smoothScroll('offer')">QUERO CONHECER O KIT!</a>
         </div>
     </header>
 
-    <!-- Why Choose Section -->
-    <section class="why-choose">
+    <!-- Offer Section -->
+    <section class="offer-section" id="offer">
         <div class="container">
-            <h2 class="section-title">Por que escolher nossos livros?</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <div class="benefit-icon blue"><i class="fas fa-users"></i></div>
-                    <h3>Células e Grupos</h3>
-                    <p>Atividades interativas para engajar crianças durante reuniões, facilitando o ensino.</p>
+            <div class="offer-card" data-aos="fade-up" data-aos-duration="1000">
+                <h2>O Kit Divertido da Mamãe Cristã</h2>
+                <p>Tudo o que você precisa para entreter e ensinar as crianças na Palavra de Deus.</p>
+                
+                <div class="price-block">
+                    <div class="old-price">De R$ 97,90 por apenas:</div>
+                    <div class="new-price">R$ 19,90</div>
+                    <div class="installments">ou até 4x de R$ 5,77</div>
+                    <div class="discount">ECONOMIZE 79%!</div>
                 </div>
 
-                <div class="benefit">
-                    <div class="benefit-icon purple"><i class="fas fa-church"></i></div>
-                    <h3>Escola Dominical</h3>
-                    <p>Material complementar rico visualmente para aulas mais dinâmicas e memoráveis.</p>
+                <!-- LINK DE PAGAMENTO ATUALIZADO -->
+                <a href="https://pay.cakto.com.br/9gzzpwh_667750" class="cta-button" target="_blank" rel="noopener noreferrer">SIM, QUERO ESSE KIT AGORA!</a>
+                
+                <!-- ESTOQUE BAIXO -->
+                <div class="stock-counter">
+                    <i class="fas fa-fire"></i>
+                    <span id="stock-count">Apenas 23 unidades em estoque!</span>
                 </div>
-
-                <div class="benefit">
-                    <div class="benefit-icon green"><i class="fas fa-heart"></i></div>
-                    <h3>Devocional Familiar</h3>
-                    <p>Momentos especiais de conexão com Deus em família, longe das telas.</p>
-                </div>
-
-                <div class="benefit">
-                    <div class="benefit-icon orange"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Uso Pedagógico</h3>
-                    <p>Ferramenta educativa que desenvolve coordenação motora fina e criatividade.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center;">
-                <button class="cta-button" onclick="smoothScroll('limited-offer')">QUERO GARANTIR O MEU</button>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Social Proof Banner -->
+    <section class="social-proof-banner" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <h2>Junte-se a mais de 200 mães e pais felizes!</h2>
+            <p>Veja como o Kit Cristão Infantil está transformando o lar de muitas famílias.</p>
+            <div class="stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span style="color: var(--text-dark); font-weight: 600; margin-left: 10px;">4.9/5</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Will Receive Section -->
+    <section class="receive-section" id="o-que-vai-receber">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000" style="text-align:center;">Veja Tudo o Que Você Vai Receber:</h2>
+            <div class="receive-grid">
+                <div class="receive-item" data-aos="fade-right" data-aos-duration="1000">
+                    <i class="fas fa-book-open"></i>
+                    <div class="receive-item-content">
+                        <h3>35 Livros para Colorir</h3>
+                        <p>Personagens e histórias bíblicas para colorir.</p>
+                    </div>
+                </div>
+                <div class="receive-item" data-aos="fade-left" data-aos-duration="1000">
+                    <i class="fas fa-gamepad"></i>
+                    <div class="receive-item-content">
+                        <h3>Jogos Online</h3>
+                        <p>Acesso vitalício à plataforma de jogos.</p>
+                    </div>
+                </div>
+                <div class="receive-item" data-aos="fade-right" data-aos-duration="1200">
+                    <i class="fas fa-shapes"></i>
+                    <div class="receive-item-content">
+                        <h3>Atividades Cristãs</h3>
+                        <p>Diversos temas e níveis de dificuldade.</p>
+                    </div>
+                </div>
+                <div class="receive-item" data-aos="fade-left" data-aos-duration="1200">
+                    <i class="fas fa-trophy"></i>
+                    <div class="receive-item-content">
+                        <h3>Super Trunfo</h3>
+                        <p>Para se divertir em família aprendendo.</p>
+                    </div>
+                </div>
+                <div class="receive-item" data-aos="fade-right" data-aos-duration="1400">
+                    <i class="fas fa-star"></i>
+                    <div class="receive-item-content">
+                        <h3>UNO da Fé</h3>
+                        <p>Com personagens e ensinamentos bíblicos.</p>
+                    </div>
+                </div>
+                <div class="receive-item" data-aos="fade-left" data-aos-duration="1400">
+                    <i class="fas fa-brain"></i>
+                    <div class="receive-item-content">
+                        <h3>Jogo da Memória</h3>
+                        <p>Para treinar a mente com passagens bíblicas.</p>
+                    </div>
+                </div>
+                <div class="receive-item bonus-item" data-aos="zoom-in" data-aos-duration="1600">
+                    <i class="fas fa-bolt"></i>
+                    <div class="receive-item-content">
+                        <h3>Acesso Imediato</h3>
+                        <p>Receba o link para acessar tudo assim que o pagamento for confirmado!</p>
+                    </div>
+                </div>
+                <div class="receive-item bonus-item" data-aos="zoom-in" data-aos-duration="1800">
+                    <i class="fas fa-gift"></i>
+                    <div class="receive-item-content">
+                        <h3>Guia Bônus Exclusivo</h3>
+                        <p>"Como Ensinar a Fé de Forma Divertida" para mamães como você!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">O que nossos clientes dizem</h2>
-            <div class="rating">
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000" style="text-align:center;">Mamães como você amaram!</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-duration="1000">
+                    <img src="https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto de cliente">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Meu filho de 4 anos amou! Menos tempo na tablet e mais tempo colorindo os personagens da Bíblia. Valeu muito cada centavo!"</p>
+                    <h4>Mariana S., Mãe do Pedro</h4>
                 </div>
-                <span>4.9/5 - 347 avaliações</span>
-            </div>
-
-            <div class="carousel-wrapper" id="testimonialCarouselWrapper">
-                <button class="carousel-nav-btn carousel-prev" aria-label="Depoimento anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-track-container">
-                    <div class="carousel-track" id="testimonialTrack">
-                        <div class="testimonial-slide"><img data-src="https://i.postimg.cc/NF91RSfs/IMG-5390.jpg" alt="Depoimento de cliente satisfeito" loading="lazy" class="chat-screenshot lazy-img"></div>
-                        <div class="testimonial-slide"><img data-src="https://i.postimg.cc/3Ns211dg/IMG-5369.jpg" alt="Feedback positivo sobre o livro" loading="lazy" class="chat-screenshot lazy-img"></div>
-                        <div class="testimonial-slide"><img data-src="https://i.postimg.cc/x180nchc/522383108-17864190051431182-2865204779070455552-n.jpg" alt="Cliente elogiando o material" loading="lazy" class="chat-screenshot lazy-img"></div>
-                        <div class="testimonial-slide"><img data-src="https://i.postimg.cc/2SyzrVMz/522346279-17864190078431182-7791260858254554013-n.jpg" alt="Depoimento sobre escola dominical" loading="lazy" class="chat-screenshot lazy-img"></div>
-                        <div class="testimonial-slide"><img data-src="https://i.postimg.cc/8k9dTptj/IMG-5365.jpg" alt="Comentário de compra verificada" loading="lazy" class="chat-screenshot lazy-img"></div>
-                    </div>
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-duration="1200">
+                    <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto de cliente">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Material incrível! As atividades são lindas e meus filhos aprenderam tanto brincando. Super recomendo para outras mamães!"</p>
+                    <h4>Joana P., Mãe da Laura e do Lucas</h4>
                 </div>
-                <button class="carousel-nav-btn carousel-next" aria-label="Próximo depoimento"><i class="fas fa-chevron-right"></i></button>
-                
-                <div class="dots-container" id="testimonialDots"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Limited Offer -->
-    <section class="limited-offer" id="limited-offer">
-        <div class="container">
-            <div class="offer-alert">
-                <i class="fas fa-clock"></i>
-                <span id="limited-offer-date">OFERTA LIMITADA - Carregando...</span>
-            </div>
-
-            <h2 class="section-title">Escolha Sua Oferta Especial</h2>
-            <p class="section-subtitle">Livros de qualidade profissional para enriquecer seus momentos de fé</p>
-
-            <div class="pricing-cards">
-                <!-- Basic Package -->
-                <div class="pricing-card">
-                    <div class="package-header">
-                        <i class="far fa-star"></i>
-                        <h3>Pacote Básico</h3>
-                    </div>
-                    
-                    <div class="pricing">
-                        <div class="old-price">R$ 47,90</div>
-                        <div class="discount">-57% OFF</div>
-                        <div class="current-price">R$ 19,90</div>
-                        <div class="savings">Economia de R$ 27,90</div>
-                    </div>
-
-                    <div class="features-list">
-                        <div class="feature-item"><i class="fas fa-check"></i> 35 Livros de Colorir em PDF</div>
-                        <div class="feature-item"><i class="fas fa-check"></i> Temas Bíblicos Variados</div>
-                        <div class="feature-item"><i class="fas fa-check"></i> Acesso Vitalício</div>
-                        <div class="feature-item"><i class="fas fa-check"></i> Suporte por WhatsApp</div>
-                        <div class="feature-item"><i class="fas fa-check"></i> Garantia de 7 dias</div>
-                    </div>
-
-                    <a href="https://pay.cakto.com.br/38fazjh_660050" class="buy-button basic" rel="noopener noreferrer" target="_blank">COMPRAR BÁSICO</a>
-                </div>
-
-                <!-- Premium Package -->
-                <div class="pricing-card premium">
-                    <div class="bestseller">
-                        <i class="fas fa-trophy"></i>
-                        <span>MAIS VENDIDO</span>
-                    </div>
-                    
-                    <div class="package-header">
-                        <i class="fas fa-crown"></i>
-                        <h3>Pacote Premium</h3>
-                    </div>
-                    
-                    <div class="pricing">
-                        <div class="old-price">R$ 256,90</div>
-                        <div class="discount">-90% OFF</div>
-                        <div class="current-price">R$ 24,90</div>
-                        <div class="savings">Economia de R$ 231,00</div>
-                    </div>
-
-                    <div class="included">TUDO DO PACOTE BÁSICO +</div>
-
-                    <div class="bonus-items">
-                        <div class="bonus-item">
-                            <i class="fas fa-gift"></i>
-                            <div>
-                                <strong>PLANER DEVOCIONAL INFANTIL</strong>
-                                <p>BÔNUS EXCLUSIVO</p>
-                            </div>
-                        </div>
-                        <div class="bonus-item">
-                            <i class="fas fa-gift"></i>
-                            <div>
-                                <strong>LIVRO DE ATIVIDADES CRISTÃS</strong>
-                                <p>BÔNUS EXCLUSIVO</p>
-                            </div>
-                        </div>
-                        <div class="bonus-item">
-                            <i class="fas fa-gift"></i>
-                            <div>
-                                <strong>DESAFIO BÍBLICO DE 7 DIAS</strong>
-                                <p>BÔNUS EXCLUSIVO</p>
-                            </div>
-                        </div>
-                        <div class="bonus-item">
-                            <i class="fas fa-gift"></i>
-                            <div>
-                                <strong>CARTÕES BÍBLICOS PARA MEMORIZAÇÃO</strong>
-                                <p>BÔNUS EXCLUSIVO</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://pay.cakto.com.br/yku9sty_660064" class="buy-button premium" rel="noopener noreferrer" target="_blank">QUERO O PACOTE COMPLETO</a>
-                    <div class="social-proof">+500 pessoas escolheram este pacote hoje</div>
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-duration="1400">
+                    <img src="https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto de cliente">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p>"Comprei na dúvida e superou minhas expectativas. Vale cada centavo. Acesso vitalício é o melhor!"</p>
+                    <h4>Carlos F., Pai</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000" style="text-align:center;">Dúvidas Frequentes</h2>
             <div class="faq-list">
-                <!-- Item 1 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="1000">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-                        <span>Como recebo os livros?</span>
+                        <span>Como funciona o acesso após a compra?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Após a confirmação do pagamento, você receberá imediatamente um e-mail com o link de acesso à nossa plataforma exclusiva, onde poderá baixar todos os 35 livros em formato PDF de alta qualidade.</p>
+                        <p>Imediatamente após a confirmação do pagamento, você receberá um e-mail com seu login e senha para acessar a plataforma de jogos e um link para baixar todo o conteúdo em PDF. O acesso é vitalício!</p>
                     </div>
                 </div>
-
-                <!-- Item 2 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="1200">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-                        <span>Posso imprimir quantas vezes quiser?</span>
+                        <span>Posso imprimir o material quantas vezes quiser?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sim! O acesso é vitalício e os arquivos são seus. Você pode imprimir quantas cópias precisar para uso pessoal, em casa com seus filhos, ou para todas as crianças de sua célula ou classe da escola dominical.</p>
+                        <p>Sim! Você tem acesso vitalício e pode imprimir os livros, jogos e atividades quantas vezes desejar para uso pessoal, com sua família ou em sua igreja.</p>
                     </div>
                 </div>
-
-                <!-- Item 3 -->
-                <div class="faq-item">
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="1400">
                     <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-                        <span>Para qual idade é recomendado?</span>
+                        <span>É seguro comprar com o cartão de crédito?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Nossos livros foram desenhados para atender crianças de 3 a 12 anos. Temos ilustrações mais simples para os pequenos e desenhos mais detalhados com desafios para os maiores.</p>
+                        <p>Totalmente seguro. Nosso processo de pagamento é gerenciado por uma plataforma líder de mercado que utiliza criptografia de ponta para proteger seus dados.</p>
                     </div>
                 </div>
-
-                <!-- Item 4 -->
-                <div class="faq-item">
-                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
-                        <span>Tem garantia?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutamente. Oferecemos uma garantia incondicional de 7 dias. Se por qualquer motivo você não amar o material, basta nos enviar um e-mail e devolveremos 100% do seu dinheiro.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center;">
-                <button class="cta-button" onclick="smoothScroll('limited-offer')">TIREI MINHAS DÚVIDAS, QUERO COMPRAR</button>
             </div>
         </div>
     </section>
 
-    <!-- Guarantee -->
+    <!-- Guarantee Section -->
     <section class="guarantee">
         <div class="container">
-            <div class="guarantee-box">
+            <div class="guarantee-box" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="guarantee-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Garantia Blindada de 7 Dias</h3>
-                <p>O risco é todo nosso. Teste o material e se não ficar satisfeito, devolvemos seu investimento sem perguntas.</p>
-            </div>
-
-            <div class="security-badges">
-                <div class="security-item"><i class="fas fa-lock"></i> Pagamento Seguro</div>
-                <div class="security-item"><i class="fas fa-certificate"></i> Ambiente SSL Protegido</div>
-                <div class="security-item"><i class="fas fa-check-circle"></i> Entrega Imediata</div>
+                <h2>Garantia Blindada de 7 Dias</h2>
+                <p>Estamos tão confiantes que você vai amar o Pack Cristão Infantil que oferecemos uma garantia incondicional de 7 dias. Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro, sem perguntas.</p>
             </div>
         </div>
     </section>
@@ -918,315 +638,102 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Livros de Colorir Cristãos. Todos os direitos reservados.</p>
-            <p style="font-size: 0.8rem; opacity: 0.7;">Este site não faz parte do site do Facebook ou Facebook Inc. Além disso, este site não é endossado pelo Facebook em qualquer aspecto.</p>
+            <p>&copy; 2025 Pack Cristão Infantil. Todos os direitos reservados.</p>
+            <p style="font-size: 0.8rem; opacity: 0.7;">Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.</p>
         </div>
     </footer>
 
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=5554984150368&text=Ol%C3%A1%2C+acabei+de+acessar+o+suporte+pelo+site.&type=phone_number&app_absent=0" class="whatsapp-button" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        /**
-         * Generic Carousel Class
-         * Handles logic for infinite-feeling sliding, touch events, and responsiveness.
-         */
-        class Carousel {
-            constructor(trackId, wrapperId, dotsId = null, itemsPerViewDesktop = 3) {
-                this.track = document.getElementById(trackId);
-                this.wrapper = document.getElementById(wrapperId);
-                this.dotsContainer = dotsId ? document.getElementById(dotsId) : null;
-                this.itemsPerViewDesktop = itemsPerViewDesktop;
-                
-                if (!this.track || !this.wrapper) return;
-
-                this.slides = Array.from(this.track.children);
-                this.currentIndex = 0;
-                this.autoPlayInterval = null;
-                
-                // Binding methods
-                this.next = this.next.bind(this);
-                this.prev = this.prev.bind(this);
-                this.handleTouchStart = this.handleTouchStart.bind(this);
-                this.handleTouchMove = this.handleTouchMove.bind(this);
-                this.handleTouchEnd = this.handleTouchEnd.bind(this);
-                this.resize = this.resize.bind(this);
-
-                this.init();
-            }
-
-            init() {
-                // Determine layout
-                this.updateDimensions();
-                
-                // Buttons
-                const nextBtn = this.wrapper.querySelector('.carousel-next');
-                const prevBtn = this.wrapper.querySelector('.carousel-prev');
-                if (nextBtn) nextBtn.addEventListener('click', () => { this.stopAutoPlay(); this.next(); });
-                if (prevBtn) prevBtn.addEventListener('click', () => { this.stopAutoPlay(); this.prev(); });
-
-                // Touch Events
-                this.track.addEventListener('touchstart', this.handleTouchStart, { passive: true });
-                this.track.addEventListener('touchmove', this.handleTouchMove, { passive: true });
-                this.track.addEventListener('touchend', this.handleTouchEnd);
-
-                // Auto Play & Pause on Hover
-                this.startAutoPlay();
-                this.wrapper.addEventListener('mouseenter', () => this.stopAutoPlay());
-                this.wrapper.addEventListener('mouseleave', () => this.startAutoPlay());
-
-                // Resize
-                window.addEventListener('resize', this.resize);
-                
-                // Dots
-                if (this.dotsContainer) this.createDots();
-            }
-
-            updateDimensions() {
-                this.visibleSlides = window.innerWidth <= 768 ? 1 : this.itemsPerViewDesktop;
-                this.slideWidth = 100 / this.visibleSlides;
-                this.maxIndex = Math.max(0, this.slides.length - this.visibleSlides);
-                this.updatePosition();
-            }
-
-            createDots() {
-                this.dotsContainer.innerHTML = '';
-                // Only create dots for valid starting positions (0 to maxIndex)
-                const numDots = this.maxIndex + 1;
-                
-                for (let i = 0; i < numDots; i++) {
-                    const dot = document.createElement('button');
-                    dot.className = `dot ${i === this.currentIndex ? 'active' : ''}`;
-                    dot.ariaLabel = `Ir para slide ${i + 1}`;
-                    dot.addEventListener('click', () => {
-                        this.stopAutoPlay();
-                        this.currentIndex = i;
-                        this.updatePosition();
-                    });
-                    this.dotsContainer.appendChild(dot);
-                }
-            }
-
-            updateDots() {
-                if (!this.dotsContainer) return;
-                const dots = Array.from(this.dotsContainer.children);
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === this.currentIndex);
-                });
-            }
-
-            next() {
-                if (this.currentIndex >= this.maxIndex) {
-                    this.currentIndex = 0; // Loop back to start
-                } else {
-                    this.currentIndex++;
-                }
-                this.updatePosition();
-            }
-
-            prev() {
-                if (this.currentIndex <= 0) {
-                    this.currentIndex = this.maxIndex; // Loop to end
-                } else {
-                    this.currentIndex--;
-                }
-                this.updatePosition();
-            }
-
-            updatePosition() {
-                const translateX = -(this.currentIndex * (100 / this.visibleSlides));
-                this.track.style.transform = `translateX(${translateX}%)`;
-                this.updateDots();
-            }
-
-            resize() {
-                // Debounce resize
-                clearTimeout(this.resizeTimer);
-                this.resizeTimer = setTimeout(() => {
-                    this.updateDimensions();
-                    // Ensure current index is valid after resize
-                    if (this.currentIndex > this.maxIndex) this.currentIndex = this.maxIndex;
-                    this.updatePosition();
-                    if(this.dotsContainer) this.createDots();
-                }, 200);
-            }
-
-            startAutoPlay() {
-                if (this.autoPlayInterval) clearInterval(this.autoPlayInterval);
-                this.autoPlayInterval = setInterval(this.next, 4000);
-            }
-
-            stopAutoPlay() {
-                if (this.autoPlayInterval) clearInterval(this.autoPlayInterval);
-            }
-
-            // Touch logic
-            handleTouchStart(e) {
-                this.touchStartX = e.touches[0].clientX;
-                this.stopAutoPlay();
-            }
-
-            handleTouchMove(e) {
-                this.touchEndX = e.touches[0].clientX;
-            }
-
-            handleTouchEnd() {
-                if (!this.touchStartX || !this.touchEndX) return;
-                const diff = this.touchStartX - this.touchEndX;
-                
-                if (Math.abs(diff) > 50) { // Threshold
-                    if (diff > 0) this.next();
-                    else this.prev();
-                }
-                
-                this.touchStartX = null;
-                this.touchEndX = null;
-                this.startAutoPlay();
-            }
-        }
-
-        /**
-         * Notification System
-         * Manages fake social proof notifications.
-         */
-        class NotificationSystem {
-            constructor() {
-                this.el = document.getElementById('purchaseNotification');
-                this.closeBtn = this.el.querySelector('.close-btn');
-                this.nameEl = document.getElementById('notificationName');
-                this.prodEl = document.getElementById('notificationProduct');
-                this.locEl = document.getElementById('notificationLocation');
-                this.timeEl = document.getElementById('notificationTime');
-                
-                this.customers = [
-                    { name: 'Fernanda Costa', loc: 'Brasília - DF', prod: 'Pacote Premium' },
-                    { name: 'João Silva', loc: 'São Paulo - SP', prod: 'Pacote Básico' },
-                    { name: 'Maria Oliveira', loc: 'Rio de Janeiro - RJ', prod: 'Pacote Premium' },
-                    { name: 'Carlos Santos', loc: 'Belo Horizonte - MG', prod: 'Pacote Premium' },
-                    { name: 'Ana Paula', loc: 'Salvador - BA', prod: 'Pacote Básico' },
-                    { name: 'Juliana Lima', loc: 'Curitiba - PR', prod: 'Pacote Premium' },
-                    { name: 'Patrícia Souza', loc: 'Recife - PE', prod: 'Pacote Premium' }
-                ];
-
-                this.times = ['agora', 'há 2 min', 'há 5 min', 'há 12 min', 'há 23 min'];
-                
-                this.init();
-            }
-
-            init() {
-                this.closeBtn.addEventListener('click', () => this.hide());
-                
-                // Initial delay
-                setTimeout(() => this.show(), 5000);
-            }
-
-            show() {
-                const customer = this.customers[Math.floor(Math.random() * this.customers.length)];
-                const time = this.times[Math.floor(Math.random() * this.times.length)];
-
-                this.nameEl.textContent = customer.name;
-                this.locEl.textContent = customer.loc;
-                this.prodEl.textContent = `Comprou: ${customer.prod}`;
-                this.timeEl.textContent = time;
-
-                this.el.classList.add('show');
-
-                // Hide automatically after 6 seconds
-                setTimeout(() => this.hide(), 6000);
-            }
-
-            hide() {
-                this.el.classList.remove('show');
-                // Schedule next notification randomly between 15s and 30s
-                const nextDelay = Math.random() * (30000 - 15000) + 15000;
-                setTimeout(() => this.show(), nextDelay);
-            }
-        }
-
-        /**
-         * Utilities & Initialization
-         */
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Initialize Carousels
-            new Carousel('productTrack', 'productCarouselWrapper', null, 3);
-            new Carousel('testimonialTrack', 'testimonialCarouselWrapper', 'testimonialDots', 1);
+            // Initialize AOS
+            AOS.init({
+                once: true,
+            });
 
-            // 2. Initialize Notifications
-            new NotificationSystem();
+            // Countdown Timer
+            function startTimer(duration, display) {
+                var timer = duration, hours, minutes, seconds;
+                setInterval(function () {
+                    hours = parseInt(timer / 3600, 10);
+                    minutes = parseInt((timer % 3600) / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
 
-            // 3. Dynamic Date for Offer
-            const dateEl = document.getElementById('limited-offer-date');
-            if (dateEl) {
-                const today = new Date();
-                const d = String(today.getDate()).padStart(2, '0');
-                const m = String(today.getMonth() + 1).padStart(2, '0');
-                const y = String(today.getFullYear()).slice(-2);
-                dateEl.textContent = `OFERTA LIMITADA - Apenas hoje ${d}/${m}/${y}`;
+                    hours = hours < 10 ? "0" + hours : hours;
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    display.textContent = hours + ":" + minutes + ":" + seconds;
+
+                    if (--timer < 0) {
+                        timer = duration; // Reset timer
+                    }
+                }, 1000);
             }
+            const oneHour = 60 * 60; // 1 hour in seconds
+            const display = document.querySelector('#timer');
+            startTimer(oneHour, display);
 
-            // 4. FAQ Accordion Logic
+            // Dynamic Stock Counter
+            const stockElement = document.getElementById('stock-count');
+            let currentStock = 23; // Initial stock
+
+            function updateStock() {
+                if (currentStock > 5) { // Don't let it go below 5
+                    const decrease = Math.random() < 0.5 ? 1 : 2; // Decrease by 1 or 2
+                    currentStock -= decrease;
+                    stockElement.textContent = `Apenas ${currentStock} unidades em estoque!`;
+                }
+            }
+            // Simulate a purchase every 15-45 seconds
+            setInterval(() => {
+                updateStock();
+            }, Math.random() * (45000 - 15000) + 15000);
+
+
+            // FAQ Accordion
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 question.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
-                    
-                    // Close all
                     faqItems.forEach(f => {
                         f.classList.remove('active');
-                        f.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                         f.querySelector('.faq-answer').style.maxHeight = null;
                     });
-
-                    // Toggle current
                     if (!isActive) {
                         item.classList.add('active');
-                        question.setAttribute('aria-expanded', 'true');
                         const answer = item.querySelector('.faq-answer');
                         answer.style.maxHeight = answer.scrollHeight + "px";
                     }
                 });
             });
 
-            // 5. Image Lazy Loading & Error Handling
-            const lazyImages = document.querySelectorAll('.lazy-img');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        
-                        // Error fallback
-                        img.onerror = function() {
-                            this.onerror = null; 
-                            const wrapper = document.createElement('div');
-                            wrapper.className = 'img-placeholder';
-                            wrapper.innerHTML = '<i class="fas fa-image"></i>';
-                            this.parentNode.insertBefore(wrapper, this);
-                            this.style.display = 'none';
-                        };
-                        
-                        observer.unobserve(img);
-                    }
-                });
-            });
+            // Notification System
+            const notification = document.getElementById('purchaseNotification');
+            const closeBtn = notification.querySelector('.close-btn');
+            const names = ['Ana', 'Carlos', 'Mariana', 'João', 'Fernanda', 'Patrícia', 'Roberto'];
+            const locations = ['São Paulo, SP', 'Rio de Janeiro, RJ', 'Belo Horizonte, MG', 'Brasília, DF', 'Curitiba, PR'];
+            const times = ['agora mesmo', 'há 1 minuto', 'há 3 minutos'];
+
+            const showNotification = () => {
+                document.getElementById('notificationName').textContent = names[Math.floor(Math.random() * names.length)];
+                document.getElementById('notificationLocation').textContent = locations[Math.floor(Math.random() * locations.length)];
+                document.getElementById('notificationTime').textContent = times[Math.floor(Math.random() * times.length)];
+                document.getElementById('notificationProduct').textContent = 'Acabou de garantir o Kit Cristão Infantil!';
+                notification.classList.add('show');
+                setTimeout(() => notification.classList.remove('show'), 6000);
+            };
             
-            lazyImages.forEach(img => imageObserver.observe(img));
-            
-            // Handle non-lazy images errors too
-            document.querySelectorAll('img:not(.lazy-img)').forEach(img => {
-                img.onerror = function() {
-                    this.onerror = null;
-                    this.style.display = 'none'; // Or show fallback
-                    // For hero image, we might want to keep it or show a solid color
-                    if(this.classList.contains('hero-book-image')) {
-                        this.parentElement.style.backgroundColor = 'rgba(255,255,255,0.2)';
-                        this.parentElement.style.borderRadius = '12px';
-                        this.parentElement.style.height = '400px';
-                        this.parentElement.style.display = 'flex';
-                        this.parentElement.style.alignItems = 'center';
-                        this.parentElement.style.justifyContent = 'center';
-                        this.parentElement.innerHTML += '<i class="fas fa-book fa-3x" style="color:white; opacity:0.8"></i>';
-                    }
-                }
-            });
+            closeBtn.addEventListener('click', () => notification.classList.remove('show'));
+            setTimeout(showNotification, 7000); // Show first notification after 7s
+            setInterval(showNotification, 15000); // Show a new notification every 15s
         });
 
         // Smooth Scroll Helper
