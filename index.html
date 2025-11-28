@@ -161,27 +161,6 @@
             font-size: 30px;
         }
         
-        /* Purchase Notification */
-        .purchase-notification {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-            padding: 16px;
-            width: 320px;
-            z-index: 1000;
-            transform: translateX(400px);
-            transition: transform 0.4s ease-out;
-            border-left: 4px solid var(--primary-color);
-        }
-        .purchase-notification.show { transform: translateX(0); }
-        .close-btn { position: absolute; top: 8px; right: 8px; background: none; border: none; font-size: 20px; cursor: pointer; color: #999; }
-        .customer-name { font-weight: 700; margin-bottom: 4px; color: var(--text-dark); }
-        .purchase-info { font-size: 14px; margin-bottom: 8px; color: var(--text-light); }
-        .location-time { display: flex; justify-content: space-between; font-size: 12px; color: #aaa; }
-        
         /* Header/Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.9)), url('https://images.pexels.com/photos/1106425/pexels-photo-1106425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
@@ -420,7 +399,6 @@
             .hero { padding: 100px 0; background-attachment: scroll; }
             .offer-card { padding: 30px 20px; }
             .price-block .new-price { font-size: 2.8rem; }
-            .purchase-notification { width: 90%; right: 5%; left: 5%; }
         }
 
         @media (max-width: 480px) {
@@ -435,17 +413,6 @@
     <div class="urgency-timer" id="urgency-timer">
         <i class="fas fa-clock"></i>
         <span>OFERTA POR TEMPO LIMITADO! Termina em: <span id="timer">00:00:00</span></span>
-    </div>
-
-    <!-- Purchase Notification -->
-    <div id="purchaseNotification" class="purchase-notification" role="alert" aria-live="polite">
-        <button class="close-btn" aria-label="Fechar notificação">×</button>
-        <div class="customer-name" id="notificationName"></div>
-        <div class="purchase-info" id="notificationProduct"></div>
-        <div class="location-time">
-            <span id="notificationLocation"></span>
-            <span id="notificationTime"></span>
-        </div>
     </div>
 
     <!-- Hero Section -->
@@ -573,7 +540,7 @@
                     <h4>Mariana S., Mãe do Pedro</h4>
                 </div>
                 <div class="testimonial-card" data-aos="zoom-in" data-aos-duration="1200">
-                    <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto de cliente">
+                    <img src="https://i.ibb.co/GvRbwLYr/1753519302326.webp" alt="Foto de cliente">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p>"Material incrível! As atividades são lindas e meus filhos aprenderam tanto brincando. Super recomendo para outras mamães!"</p>
                     <h4>Joana P., Mãe da Laura e do Lucas</h4>
@@ -714,26 +681,6 @@
                     }
                 });
             });
-
-            // Notification System
-            const notification = document.getElementById('purchaseNotification');
-            const closeBtn = notification.querySelector('.close-btn');
-            const names = ['Ana', 'Carlos', 'Mariana', 'João', 'Fernanda', 'Patrícia', 'Roberto'];
-            const locations = ['São Paulo, SP', 'Rio de Janeiro, RJ', 'Belo Horizonte, MG', 'Brasília, DF', 'Curitiba, PR'];
-            const times = ['agora mesmo', 'há 1 minuto', 'há 3 minutos'];
-
-            const showNotification = () => {
-                document.getElementById('notificationName').textContent = names[Math.floor(Math.random() * names.length)];
-                document.getElementById('notificationLocation').textContent = locations[Math.floor(Math.random() * locations.length)];
-                document.getElementById('notificationTime').textContent = times[Math.floor(Math.random() * times.length)];
-                document.getElementById('notificationProduct').textContent = 'Acabou de garantir o Kit Cristão Infantil!';
-                notification.classList.add('show');
-                setTimeout(() => notification.classList.remove('show'), 6000);
-            };
-            
-            closeBtn.addEventListener('click', () => notification.classList.remove('show'));
-            setTimeout(showNotification, 7000); // Show first notification after 7s
-            setInterval(showNotification, 15000); // Show a new notification every 15s
         });
 
         // Smooth Scroll Helper
