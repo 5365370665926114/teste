@@ -29,11 +29,17 @@ jobs:
       - name: Prepare Android 17 SDK
         shell: bash
         run: |
+          set -euxo pipefail
           export ANDROID_HOME=/usr/local/lib/android/sdk
           export ANDROID_SDK_ROOT=$ANDROID_HOME
           export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
           yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager --channel=3 "platforms;android-37" "build-tools;37.0.0" "platform-tools"
+          sdkmanager --channel=3 "platforms;android-37.0" "build-tools;37.0.0" "platform-tools"
+          test -d "$ANDROID_HOME/platforms/android-37.0"
+          if [ ! -e "$ANDROID_HOME/platforms/android-37" ]; then
+            ln -s "$ANDROID_HOME/platforms/android-37.0" "$ANDROID_HOME/platforms/android-37"
+          fi
+          ls -la "$ANDROID_HOME/platforms/android-37" "$ANDROID_HOME/platforms/android-37.0"
 
       - name: Clone pinned Metrolist source
         run: |
@@ -90,7 +96,7 @@ jobs:
             'Base: Metrolist GPL-3.0 commit 6be77c1db3f515dfe3512f581931bdfadd3f68d4' \
             'compileSdk: 37 / targetSdk: 36 / minSdk: 26' \
             'Offline mirror: MediaStore Music/DPL Music/Offline' \
-            'Stream resolver: current pinned Metrolist InnerTubeXPlayer with expired URL invalidation' \
+            'Stream resolver: current Metrolist InnerTubeXPlayer with expired URL invalidation' \
             'Test build uses Android debug signing; uninstall differently-signed DPL build before install.' \
             > dist/BUILD_NOTES.txt
 
