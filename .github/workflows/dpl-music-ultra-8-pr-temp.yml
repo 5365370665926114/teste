@@ -1,0 +1,88 @@
+name: DPL Music Ultra 8 PR Build
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Load DPL patcher
+        run: |
+          git fetch origin dpl-music-ultra-8-build:dpl-music-ultra-8-build
+          mkdir -p dpl_music_build
+          git show dpl-music-ultra-8-build:dpl_music_build/dpl_patch.py > dpl_music_build/dpl_patch.py
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK 37
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-37" "build-tools;35.0.0" "platform-tools"
+
+      - name: Clone pinned Metrolist source
+        run: |
+          git clone https://github.com/MetrolistGroup/Metrolist.git Metrolist
+          cd Metrolist
+          git checkout 6be77c1db3f515dfe3512f581931bdfadd3f68d4
+          git submodule update --init --recursive
+
+      - name: Apply DPL patches
+        run: python3 dpl_music_build/dpl_patch.py
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Unit tests
+        working-directory: Metrolist
+        env:
+          METROLIST_APPLICATION_ID: com.dpl.music.ultra
+          METROLIST_APP_NAME: DPL Music Ultra
+          PULL_REQUEST: 'true'
+          GITHUB_EVENT_NAME: pull_request
+          LASTFM_API_KEY: ''
+          LASTFM_SECRET: ''
+        run: |
+          chmod +x gradlew
+          ./gradlew --console=plain :app:testIzzyDebugUnitTest --warning-mode summary
+
+      - name: Build installable APK
+        working-directory: Metrolist
+        env:
+          METROLIST_APPLICATION_ID: com.dpl.music.ultra
+          METROLIST_APP_NAME: DPL Music Ultra
+          PULL_REQUEST: 'true'
+          GITHUB_EVENT_NAME: pull_request
+          LASTFM_API_KEY: ''
+          LASTFM_SECRET: ''
+        run: ./gradlew --console=plain :app:assembleIzzyDebug --warning-mode summary -x lint
+
+      - name: Collect output
+        run: |
+          mkdir -p dist
+          APK="$(find Metrolist/app/build/outputs/apk/izzy/debug -type f -name '*.apk' | head -1)"
+          test -n "$APK"
+          cp "$APK" dist/DPL_Music_Ultra_8.0.0.apk
+          sha256sum dist/DPL_Music_Ultra_8.0.0.apk > dist/SHA256SUMS.txt
+          cp dpl_music_build/dpl_patch.py dist/dpl_patch.py
+          printf '%s\n' 'DPL Music Ultra 8.0.0' 'Base: Metrolist GPL-3.0 commit 6be77c1db3f515dfe3512f581931bdfadd3f68d4' 'Reference: SpotiFlyer GPL-3.0 download/storage concepts' 'Adds public offline mirror under Music/DPL Music/Offline and fixes Media3 clear-all consistency.' > dist/SOURCE_AND_CHANGES.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DPL-Music-Ultra-8.0.0
+          path: dist/*
+          retention-days: 7
+          if-no-files-found: error
