@@ -64,13 +64,13 @@ jobs:
           git submodule update --init --recursive
 
       - name: Apply DPL source patches
-        run: python3 dpl_music_build/dpl_patch.py
+        run: |
+          python3 dpl_music_build/dpl_patch.py
+          python3 dpl_music_build/dpl_patch_v801.py
 
       - uses: gradle/actions/setup-gradle@v4
 
-      # Unit tests for this exact source patch passed on run 35190231824.
-      # This job now focuses on producing and verifying the installable artifact.
-      - name: Build DPL Music APK
+      - name: Unit tests
         working-directory: Metrolist
         env:
           METROLIST_APPLICATION_ID: com.dplmusic.app
@@ -81,7 +81,18 @@ jobs:
           LASTFM_SECRET: ''
         run: |
           chmod +x gradlew
-          ./gradlew --console=plain :app:assembleIzzyDebug --warning-mode summary -x lint
+          ./gradlew --console=plain :app:testIzzyDebugUnitTest --warning-mode summary
+
+      - name: Build DPL Music APK
+        working-directory: Metrolist
+        env:
+          METROLIST_APPLICATION_ID: com.dplmusic.app
+          METROLIST_APP_NAME: DPL Music Ultra
+          PULL_REQUEST: 'true'
+          GITHUB_EVENT_NAME: pull_request
+          LASTFM_API_KEY: ''
+          LASTFM_SECRET: ''
+        run: ./gradlew --console=plain :app:assembleIzzyDebug --warning-mode summary -x lint
 
       - name: Verify APK
         shell: bash
@@ -90,26 +101,30 @@ jobs:
           APK="$(find Metrolist/app/build/outputs/apk/izzy/debug -type f -name '*.apk' | head -1)"
           test -n "$APK"
           mkdir -p dist
-          cp "$APK" dist/DPL_Music_Ultra_8.0.0_SOURCE.apk
+          cp "$APK" dist/DPL_Music_Ultra_8.0.1_SOURCE.apk
           APKSIGNER="$ANDROID_HOME/build-tools/37.0.0/apksigner"
-          "$APKSIGNER" verify --verbose --print-certs dist/DPL_Music_Ultra_8.0.0_SOURCE.apk | tee dist/APKSIGNER.txt
-          unzip -t dist/DPL_Music_Ultra_8.0.0_SOURCE.apk > dist/ZIP_TEST.txt
-          sha256sum dist/DPL_Music_Ultra_8.0.0_SOURCE.apk > dist/SHA256SUMS.txt
+          "$APKSIGNER" verify --verbose --print-certs dist/DPL_Music_Ultra_8.0.1_SOURCE.apk | tee dist/APKSIGNER.txt
+          unzip -t dist/DPL_Music_Ultra_8.0.1_SOURCE.apk > dist/ZIP_TEST.txt
+          sha256sum dist/DPL_Music_Ultra_8.0.1_SOURCE.apk > dist/SHA256SUMS.txt
           cp dpl_music_build/dpl_patch.py dist/dpl_patch.py
+          cp dpl_music_build/dpl_patch_v801.py dist/dpl_patch_v801.py
           printf '%s\n' \
-            'DPL Music Ultra 8.0.0 - source build' \
+            'DPL Music Ultra 8.0.1 - source build' \
             'Package: com.dplmusic.app' \
             'Base: Metrolist GPL-3.0 commit 6be77c1db3f515dfe3512f581931bdfadd3f68d4' \
             'compileSdk: 37 / targetSdk: 36 / minSdk: 26' \
             'Offline mirror: MediaStore Music/DPL Music/Offline' \
-            'Unit tests: passed for the same source patch on run 35190231824' \
+            'Offline folder is directly openable from Storage settings through Android DocumentsUI' \
+            'Startup reconciliation skips already-complete public offline copies' \
+            'Clear-all uses Media3 DownloadManager instead of deleting cache behind its index' \
             'Stream resolver: current Metrolist InnerTubeXPlayer with expired URL invalidation' \
+            'Unit tests, APK signature and ZIP integrity are checked in CI' \
             'Test build uses an ephemeral Android debug signing key; uninstall a differently-signed DPL build before install.' \
             > dist/BUILD_NOTES.txt
 
       - uses: actions/upload-artifact@v4
         with:
-          name: DPL-Music-Ultra-8-source-build
+          name: DPL-Music-Ultra-8.0.1-source-build
           path: dist/*
           retention-days: 7
           if-no-files-found: error
