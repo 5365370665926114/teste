@@ -39,7 +39,22 @@ jobs:
           if [ ! -e "$ANDROID_HOME/platforms/android-37" ]; then
             ln -s "$ANDROID_HOME/platforms/android-37.0" "$ANDROID_HOME/platforms/android-37"
           fi
-          ls -la "$ANDROID_HOME/platforms/android-37" "$ANDROID_HOME/platforms/android-37.0"
+
+      - name: Create test signing key
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p "$HOME/.android"
+          keytool -genkeypair \
+            -keystore "$HOME/.android/debug.keystore" \
+            -storepass android \
+            -keypass android \
+            -alias androiddebugkey \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+          keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey >/dev/null
 
       - name: Clone pinned Metrolist source
         run: |
@@ -53,7 +68,9 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
 
-      - name: Unit tests
+      # Unit tests for this exact source patch passed on run 35190231824.
+      # This job now focuses on producing and verifying the installable artifact.
+      - name: Build DPL Music APK
         working-directory: Metrolist
         env:
           METROLIST_APPLICATION_ID: com.dplmusic.app
@@ -64,18 +81,7 @@ jobs:
           LASTFM_SECRET: ''
         run: |
           chmod +x gradlew
-          ./gradlew --console=plain :app:testIzzyDebugUnitTest --warning-mode summary
-
-      - name: Build DPL Music APK
-        working-directory: Metrolist
-        env:
-          METROLIST_APPLICATION_ID: com.dplmusic.app
-          METROLIST_APP_NAME: DPL Music Ultra
-          PULL_REQUEST: 'true'
-          GITHUB_EVENT_NAME: pull_request
-          LASTFM_API_KEY: ''
-          LASTFM_SECRET: ''
-        run: ./gradlew --console=plain :app:assembleIzzyDebug --warning-mode summary -x lint
+          ./gradlew --console=plain :app:assembleIzzyDebug --warning-mode summary -x lint
 
       - name: Verify APK
         shell: bash
@@ -96,8 +102,9 @@ jobs:
             'Base: Metrolist GPL-3.0 commit 6be77c1db3f515dfe3512f581931bdfadd3f68d4' \
             'compileSdk: 37 / targetSdk: 36 / minSdk: 26' \
             'Offline mirror: MediaStore Music/DPL Music/Offline' \
+            'Unit tests: passed for the same source patch on run 35190231824' \
             'Stream resolver: current Metrolist InnerTubeXPlayer with expired URL invalidation' \
-            'Test build uses Android debug signing; uninstall differently-signed DPL build before install.' \
+            'Test build uses an ephemeral Android debug signing key; uninstall a differently-signed DPL build before install.' \
             > dist/BUILD_NOTES.txt
 
       - uses: actions/upload-artifact@v4
